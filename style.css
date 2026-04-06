@@ -1,0 +1,531 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+}
+
+/* HEADER */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LEFT SIDE (image + text) */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-pic {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+/* LOGOUT */
+.logout-btn {
+  padding: 6px 10px;
+  border: none;
+  background: #eee;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.logout-btn:hover {
+  background: #0c1b3a;
+  color: white;
+}
+
+/* BUTTONS */
+.actions button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: none;
+  background: #eee;
+  transition: 0.3s;
+}
+
+.actions button:hover {
+  background: #0c1b3a;
+  color: white;
+}
+
+/* BALANCE CARD */
+.balance-card {
+  background: linear-gradient(135deg, #ff8a00, #ff5e00);
+  margin: 15px;
+  padding: 20px;
+  border-radius: 20px;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.account-box {
+  background: white;
+  color: black;
+  padding: 12px;
+  border-radius: 12px;
+  margin-top: 15px;
+}
+
+/* TRANSACTION HEADER */
+.transaction-header {
+  background: linear-gradient(135deg, #ff8a00, #ff5e00);
+  color: white;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.header-title {
+  margin-left: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.info-icon {
+  border: 1px solid white;
+  border-radius: 50%;
+  padding: 2px 6px;
+}
+
+/* SEARCH */
+.search-wrapper {
+  position: relative;
+  padding: 10px;
+}
+
+.search-wrapper input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.filter-icon {
+  position: absolute;
+  right: 20px;
+  top: 18px;
+}
+
+/* BALANCE */
+.transaction-balance {
+  background: linear-gradient(135deg, #ff8a00, #ff5e00);
+  color: white;
+  padding: 20px;
+}
+
+.transaction-balance button {
+  margin-top: 10px;
+  background: white;
+  color: #1e4fa3;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* FILTER */
+.filter-tabs {
+  display: flex;
+  gap: 15px;
+  padding: 10px;
+}
+
+.filter-tabs span {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* TRANSACTION LIST */
+.section {
+  background: white;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.tx-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.tx-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tx-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #eef2ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tx-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.tx-title {
+  font-weight: 600;
+}
+
+.tx-date {
+  font-size: 12px;
+  color: #777;
+}
+
+.debit {
+  color: red;
+}
+
+.credit {
+  color: green;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  background: rgba(0,0,0,0.5);
+  top:0;left:0;right:0;bottom:0;
+}
+
+.modal-content {
+  background: white;
+  margin: 100px auto;
+  padding: 20px;
+  width: 300px;
+  border-radius: 12px;
+}
+
+/* NAV */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.bottom-nav div {
+  font-size: 12px;
+  cursor: pointer;
+}
+
+
+/* INFO GRID (fix layout to match screenshot) */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin: 10px;
+}
+
+.info-card {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.info-card p {
+  font-size: 13px;
+  color: #777;
+}
+
+.info-card h3 {
+  margin-top: 5px;
+}
+.label {
+  font-weight: 600;
+}
+
+.sub-label {
+  font-size: 12px;
+  color: #777;
+}
+
+.info-card button {
+  margin-top: 8px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  background: #eee;
+  cursor: pointer;
+}
+
+
+.tx-card {
+  padding: 12px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.tx-top {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.tx-desc {
+  font-size: 13px;
+  margin: 5px 0;
+  color: #444;
+}
+
+.tx-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #777;
+}
+
+.debit {
+  color: red;
+}
+
+.credit {
+  color: green;
+}
+
+
+
+#login-screen {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff8a00, #ff5e00);
+}
+
+.login-box {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 300px;
+  text-align: center;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(135deg, #ff8a00, #ff5e00);
+  color: white;
+  border: none;
+  margin-top: 10px;
+}
+
+/* HEADER */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LEFT */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-pic {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* RIGHT */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.icon {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* LOGOUT */
+.logout-btn {
+  padding: 6px 10px;
+  border: none;
+  background: #eee;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #0c1b3a;
+  color: white;
+}
+
+/* PROFILE MENU */
+.profile-menu {
+  position: absolute;
+  top: 70px;
+  left: 20px;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  display: none;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.profile-menu button {
+  width: 100%;
+  margin-top: 5px;
+  padding: 5px;
+}
+
+
+
+.load-more {
+  text-align: center;
+  padding: 25px;
+}
+
+.load-more button {
+  background: none;
+  border: none;
+  color: #1e4fa3;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.load-more button:hover {
+  text-decoration: underline;
+}
+
+
+.toast {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0c1b3a;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, bottom 0.3s ease;
+  z-index: 1000;
+}
+
+.toast.show {
+  opacity: 1;
+  bottom: 100px;
+}
+
+.transfer-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+}
+
+.transfer-tabs {
+  display: flex;
+  gap: 15px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.transfer-tabs span {
+  cursor: pointer;
+  color: #777;
+}
+
+.transfer-tabs .active {
+  border-bottom: 2px solid black;
+  color: black;
+}
+
+.transfer-form {
+  padding: 15px;
+}
+
+.transfer-form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+.transfer-form input,
+.transfer-form select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.transfer-form button {
+  margin-top: 20px 20px;
+  width: 100%;
+  padding: 15px;
+  background: #5a0a1d;
+  color: white;
+  border: none;
+}
+
+
+.confirm-box, .pin-box {
+  padding: 20px;
+}
+
+.confirm-box p {
+  margin: 10px 0;
+}
+
+.confirm-box button,
+.pin-box button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background: #5a0a1d;
+  color: white;
+  border: none;
+}
+
+.pin-box input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  text-align: center;
+  font-size: 18px;
+}
+
+#unavailable-screen {
+  user-select: none;
+  caret-color: transparent;
+}
+
+body {
+  caret-color: transparent;
+}
+
+input, textarea {
+  caret-color: auto;
+}

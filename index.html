@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prime Crest Bank</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div id="login-screen">
+
+  <div class="login-box">
+    <h2>Welcome Back</h2>
+    <p>Login to continue</p>
+
+    <input type="text" id="login-username" placeholder="Username">
+    <input type="password" id="login-password" placeholder="Password">
+
+    <button onclick="login()">Login</button>
+  </div>
+
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard-screen" style="display:none;">
+
+  <div class="top-bar">
+
+    <div class="top-header">
+
+  <div class="header-left">
+    <img src="https://i.pravatar.cc/100" class="profile-pic" onclick="toggleProfileMenu()">
+
+    <div>
+      <h2 id="welcome-text">Welcome 👋</h2>
+      <p>Hi, what would you like to do today?</p>
+    </div>
+  </div>
+
+  <div class="header-right">
+    <span class="icon" onclick="alert('No notifications')">🔔</span>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </div>
+
+</div>
+
+<!-- PROFILE DROPDOWN -->
+<div id="profile-menu" class="profile-menu">
+  <p id="user-name">User</p>
+  <button onclick="logout()">Logout</button>
+</div>
+
+  </div>
+
+  <!-- BALANCE CARD -->
+  <div class="balance-card">
+    <h4>Available Balance</h4>
+    <h1 id="balance">$1,088,850 USD</h1>
+
+    <div class="account-box">
+      <p>Your Account Number</p>
+      <h3>89050878043</h3>
+
+      <div class="account-actions">
+        <button onclick="goToTransactions()">Transactions</button>
+        <button onclick="goToTransactions()">Transfer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- INFO SECTION -->
+  <div class="info-grid">
+
+    <div class="info-card">
+  <p class="label">Transaction Limit</p>
+  <p class="sub-label">Your current transaction limit</p>
+  <h3 id="tx-limit">$500,000</h3>
+
+  <button onclick="setLimit()">Change Limit</button>
+</div>
+
+    <div class="info-card">
+  <p>Pending Transaction</p>
+  <h3 id="pending-count">0</h3>
+</div>
+
+<div class="info-card">
+  <p>Total Pending Transaction</p>
+  <h3 id="pending-total">$0.00</h3>
+</div>
+
+  </div>
+
+</div>
+
+<!-- TRANSACTION SCREEN -->
+<div id="transaction-screen" style="display:none;">
+
+  <div class="transaction-header">
+    <button onclick="goBack()">←</button>
+    <div class="header-title">
+      <span>PRIME CREST UNION | 10</span>
+      <span class="info-icon">i</span>
+    </div>
+  </div>
+
+  <div class="search-bar">
+    <div class="search-wrapper">
+      <input type="text" id="search-input" placeholder="Search Posted Transactions" oninput="updateUI()">
+      <span class="filter-icon">⚙️</span>
+    </div>
+  </div>
+
+  <div class="transaction-balance">
+    <p>Available Balance</p>
+    <h1 id="transaction-balance">$0.00</h1>
+    <button onclick="openTransfer()">Transfer Money</button>
+  </div>
+
+
+  <div class="filter-tabs">
+    <span onclick="filterTx('all')">All</span>
+    <span onclick="filterTx('pending')">Pending</span>
+    <span onclick="filterTx('posted')">Posted</span>
+  </div>
+
+  <div class="section">
+    <ul id="transaction-list"></ul>
+    <div class="load-more">
+  <button onclick="loadEarlier()">Load earlier transactions</button>
+</div>
+  </div>
+
+</div>
+
+
+<!-- MODAL -->
+<div id="transfer-modal" class="modal">
+  <div class="modal-content">
+    <h3>Send Money</h3>
+    <input id="recipient" placeholder="Recipient / Account Number">
+    <input id="amount" type="number" placeholder="Amount">
+    <button onclick="sendMoney()">Send</button>
+    <button onclick="closeTransfer()">Cancel</button>
+  </div>
+</div>
+
+<div id="transfer-screen" style="display:none;">
+
+  <!-- HEADER -->
+  <div class="transfer-header">
+    <button onclick="backToTransactions()">← Back</button>
+    <h3>Transfer</h3>
+  </div>
+
+
+
+  <!-- TABS -->
+  <div class="transfer-tabs">
+  <span class="active">Transfer</span>
+  <span onclick="openUnavailable()">Scheduled</span>
+  <span onclick="openUnavailable()">History</span>
+  <span onclick="openUnavailable()">External</span>
+</div>
+
+  <!-- FORM -->
+  <div class="transfer-form">
+
+    <label>From Account</label>
+    <select>
+      <option>Checking - $1,088,850</option>
+    </select>
+
+    <label>To Account</label>
+
+<select id="to-account" onchange="handleAccountSelect()">
+  <option value="">Select Account</option>
+</select>
+
+
+    <label>Transfer Type</label>
+    <select>
+      <option>One Time</option>
+    </select>
+
+    <label>Start Date</label>
+    <input type="date">
+
+    <label>Amount</label>
+    <input type="number" id="transfer-amount">
+
+    <label>Memo</label>
+    <input type="text" id="transfer-memo">
+
+    <button onclick="submitTransfer()">Continue</button>
+
+  </div>
+
+</div>
+
+<!-- ✅ NOW IT'S OUTSIDE -->
+<div id="unavailable-screen" style="display:none; padding:30px; text-align:center;">
+  <h2>Unavailable</h2>
+  <p>Sorry, this page is currently unavailable.</p>
+  <p>We're currently working on it.</p>
+  <button onclick="backToTransferFromUnavailable()">Go Back</button>
+</div>
+
+
+<!--confirmation - screen-->
+<div id="confirm-screen" style="display:none;">
+
+  <div class="transfer-header">
+    <button onclick="backToTransfer()">← Back</button>
+    <h3>Confirm Transfer</h3>
+  </div>
+
+  <div class="confirm-box">
+    <p><strong>From:</strong> Checking Account</p>
+    <p><strong>To:</strong> <span id="confirm-to"></span></p>
+    <p><strong>Amount:</strong> $<span id="confirm-amount"></span></p>
+    <p><strong>Memo:</strong> <span id="confirm-memo"></span></p>
+
+    <button onclick="goToPin()">Confirm</button>
+  </div>
+
+</div>
+
+<!--pin-screen-->
+<div id="pin-screen" style="display:none;">
+
+  <div class="transfer-header">
+    <button onclick="backToConfirm()">← Back</button>
+    <h3>Enter PIN</h3>
+  </div>
+
+  <div class="pin-box">
+    <input type="password" id="pin-input" placeholder="Enter 4-digit PIN" maxlength="4">
+    <button onclick="processTransfer()">Submit</button>
+  </div>
+
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav">
+  <div onclick="goBack()">Accounts</div>
+  <div onclick="goToTransactions()">Transfers</div>
+  <div onclick="depositMoney()">Deposit</div>
+  <div onclick="alert('Menu coming soon')">Menu</div>
+</div>
+
+
+
+<script src="app.js"></script>
+<div id="toast" class="toast"></div>
+</body>
+</html>
