@@ -99,7 +99,7 @@ let transactions = [
     amount: 10000,
     status: "posted",
     date: "02/11/2026",
-    balanceAfter: -2193.92
+    balanceAfter: 502193.92
   },
   {
     type: "Withdrawal ACH CHASE CREDI...",
@@ -107,7 +107,7 @@ let transactions = [
     amount: 32000,
     status: "posted",
     date: "02/11/2026",
-    balanceAfter: -2193.92
+    balanceAfter: 22193.92
   },
   {
     type: "Deposit",
@@ -118,12 +118,12 @@ let transactions = [
     balanceAfter: 5806.08
   },
   {
-    type: "Pending",
-    description: "Rent Payment",
-    amount: 6000,
-    status: "pending",
+    type: "Deposit",
+    description: "DEPOSIT BY CHECKMAIL TRANS...",
+    amount: 60000,
+    status: "posted",
     date: "01/11/2026",
-    balanceAfter: 5806.08
+    balanceAfter: 155806.08
   }
 ];
 
