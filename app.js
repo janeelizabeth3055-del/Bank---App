@@ -410,19 +410,21 @@ function login() {
   }
 
   // ✅ CORRECT LOGIN
-  if (username === "admin" && password === "1234") {
+  if (username === "smither6069@gmail.com" && password === "Smither4321$") {
 
     localStorage.setItem("loggedIn", "true");
     localStorage.setItem("username", username);
     localStorage.setItem("loginAttempts", 0);
 
     showToast("Logging in...");
+    document.getElementById("bottom-nav").style.display = "flex";
 
     setTimeout(() => {
       document.getElementById("login-screen").style.display = "none";
       document.getElementById("dashboard-screen").style.display = "block";
       loadUser();
     }, 800);
+    
 
   } 
   
@@ -448,11 +450,12 @@ function login() {
 window.onload = function () {
 
   let isLoggedIn = localStorage.getItem("loggedIn");
-
   if (isLoggedIn === "true") {
-    document.getElementById("login-screen").style.display = "none";
-    document.getElementById("dashboard-screen").style.display = "block";
-  }
+  document.getElementById("login-screen").style.display = "none";
+  document.getElementById("dashboard-screen").style.display = "block";
+  document.getElementById("bottom-nav").style.display = "flex";
+  loadUser();
+}
 
   updateUI();
 };
@@ -467,26 +470,13 @@ function logout() {
 
 
 function loadUser() {
-  let user = localStorage.getItem("username") || "User";
-
   document.getElementById("welcome-text").innerText =
-    "Welcome " + user + " 👋";
+    "Hello Michael";
 
-  document.getElementById("user-name").innerText = user;
+  document.getElementById("user-name").innerText = "Michael";
 }
 
-window.onload = function () {
 
-  let isLoggedIn = localStorage.getItem("loggedIn");
-
-  if (isLoggedIn === "true") {
-    document.getElementById("login-screen").style.display = "none";
-    document.getElementById("dashboard-screen").style.display = "block";
-    loadUser();
-  }
-
-  updateUI();
-};
 
 
 function toggleProfileMenu() {
@@ -565,3 +555,10 @@ function hideLoader() {
 }
 
 
+function showUnavailableToast() {
+  showToast("Oops! This feature is not available yet.");
+}
+
+function depositMoney() {
+  showUnavailableToast();
+}
