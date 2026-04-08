@@ -10,9 +10,14 @@
 <body>
 <div id="login-screen">
 
+  <!-- TOP CENTER BRAND -->
+  <div class="login-brand">
+  <img src="IMAGES/WHITE LOGO.png" class="bank-logo">
+  <h1 class="bank-name">Prime Crest Union</h1>
+</div>
+
   <div class="login-box">
-    <h2>Welcome Back</h2>
-    <p>Login to continue</p>
+<p>Login to continue</p>
 
     <input type="text" id="login-username" placeholder="Username">
     <input type="password" id="login-password" placeholder="Password">
@@ -33,8 +38,8 @@
     <img src="https://i.pravatar.cc/100" class="profile-pic" onclick="toggleProfileMenu()">
 
     <div>
-      <h2 id="welcome-text">Welcome 👋</h2>
-      <p>Hi, what would you like to do today?</p>
+      <h2 id="welcome-text">Hello Michael</h2>
+<p>What would you like to do today?</p>
     </div>
   </div>
 
@@ -243,11 +248,11 @@
 </div>
 
 <!-- BOTTOM NAV -->
-<div class="bottom-nav">
+<div class="bottom-nav" id="bottom-nav">
   <div onclick="goBack()">Accounts</div>
-  <div onclick="goToTransactions()">Transfers</div>
-  <div onclick="depositMoney()">Deposit</div>
-  <div onclick="alert('Menu coming soon')">Menu</div>
+<div onclick="goToTransactions()">Transfers</div>
+<div onclick="showUnavailableToast()">Deposit</div>
+<div onclick="showUnavailableToast()">Menu</div>
 </div>
 
 
