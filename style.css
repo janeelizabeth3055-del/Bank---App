@@ -306,10 +306,38 @@ body {
 #login-screen {
   height: 100vh;
   display: flex;
+  flex-direction: column;   /* IMPORTANT */
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #ff8a00, #ff5e00);
 }
+
+.login-brand {
+  position: absolute;
+  top: 110px;
+  left: 49%;
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: white;
+}
+
+.bank-logo {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
+
+.bank-name {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+
 
 .login-box {
   background: white;
@@ -528,4 +556,23 @@ body {
 
 input, textarea {
   caret-color: auto;
+}
+
+
+.bank-name {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin: 10px auto;
+  border-radius: 50%;
+  background: #ff5e00;
+}
+
+#bottom-nav {
+  display: none;
 }
