@@ -114,8 +114,16 @@ let transactions = [
     description: "DEPOSIT BY CHECKMAIL TRANS...",
     amount: 200000,
     status: "posted",
-    date: "01/11/2026",
+    date: "01/21/2026",
     balanceAfter: 5806.08
+  },
+  {
+    type: "Deposit",
+    description: "DEPOSIT BY CHECKMAIL TRANS...",
+    amount: 6000,
+    status: "pending",
+    date: "01/14/2026",
+    balanceAfter: 255806.08
   },
   {
     type: "Deposit",
@@ -124,7 +132,15 @@ let transactions = [
     status: "posted",
     date: "01/11/2026",
     balanceAfter: 155806.08
-  }
+  },
+  {
+    type: "Deposit",
+    description: "DEPOSIT BY CHECKMAIL TRANS...",
+    amount: 18000,
+    status: "pending",
+    date: "01/3/2026",
+    balanceAfter: 205806.08
+  },
 ];
 
 function saveData() {
