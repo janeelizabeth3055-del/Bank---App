@@ -426,7 +426,7 @@ function login() {
   }
 
   // ✅ CORRECT LOGIN
-  if (username === "smither6069@gmail.com" && password === "Smither4321$") {
+  if (username.toLowerCase() === "smither6069@gmail.com" && password === "Smither4321$") {
 
     localStorage.setItem("loggedIn", "true");
     localStorage.setItem("username", username);
