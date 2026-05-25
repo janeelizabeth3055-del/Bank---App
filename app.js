@@ -450,7 +450,7 @@ function login() {
 
     localStorage.setItem("loginAttempts", attempts);
 
-    let remaining = 3 - attempts;
+    let remaining = 5 - attempts;
 
     if (remaining <= 0) {
       let lockUntil = Date.now() + 30000; // 30 seconds
